@@ -1,0 +1,18 @@
+<resources>
+    <string-array name="units">
+        <item>inch</item>
+        <item>cm</item>
+        <item>foot</item>
+        <item>yard</item>
+        <item>mile</item>
+        <item>km</item>
+        <item>pound</item>
+        <item>kg</item>
+        <item>ounce</item>
+        <item>g</item>
+        <item>ton</item>
+        <item>°C</item>
+        <item>°F</item>
+        <item>K</item>
+    </string-array>
+</resources>
