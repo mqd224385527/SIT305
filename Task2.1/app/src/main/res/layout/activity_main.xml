@@ -8,19 +8,20 @@
     <Spinner
         android:id="@+id/spinner_from"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/units"/>
+        android:layout_height="75dp"
+        android:entries="@array/units" />
 
     <Spinner
         android:id="@+id/spinner_to"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/units"/>
+        android:layout_height="75dp"
+        android:entries="@array/units" />
 
     <EditText
         android:id="@+id/et_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:inputType="numberDecimal"
         android:hint="input"/>
 
@@ -28,11 +29,12 @@
         android:id="@+id/btn_convert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Transfer"/>
+        android:text="Transfer" />
+
     <TextView
         android:id="@+id/tv_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        android:textSize="18sp" />
 
 </LinearLayout>
