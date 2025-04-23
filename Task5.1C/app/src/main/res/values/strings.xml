@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Task5.1C</string>
+    <string name="app_name">Task 5.1C App</string>
+    <string name="nav_news">News</string>
+    <string name="nav_itube">iTube</string>
+    <string name="enter_url">Enter YouTube URL</string>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="play_video">Play Video</string>
+    <string name="playlist">Playlist</string>
+    <string name="news_feed">News Feed</string>
+    <string name="load_news">Load News</string>
 </resources>
