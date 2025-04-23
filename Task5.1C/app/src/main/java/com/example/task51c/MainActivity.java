@@ -1,46 +1,24 @@
 package com.example.task51c;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 
-import com.example.task51c.fragment.HomeFragment;
-import com.example.task51c.fragment.VideoPlayerFragment;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatAc   tivity {
-
-    private BottomNavigationView bottomNavigation;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        loadFragment(new HomeFragment());
-
-        bottomNavigation.setOnNavigationItemSelectedListener(item -> {
-            Fragment selected = null;
-            switch (item.getItemId()) {
-                case R.id.nav_news:
-                    selected = new HomeFragment();
-                    break;
-                case R.id.nav_itube:
-                    selected = new VideoPlayerFragment();
-                    break;
-            }
-            return loadFragment(selected);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
         });
-    }
-
-    private boolean loadFragment(Fragment fragment) {
-        if (fragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container, fragment).commit();
-            return true;
-        }
-        return false;
     }
 }
