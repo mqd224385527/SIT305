@@ -1,4 +1,4 @@
-rootProject.name = "Task6.1"
+rootProject.name = "Task61"
 include(":app")
 
 dependencyResolutionManagement {
