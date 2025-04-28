@@ -1,14 +1,16 @@
 package com.example.task61;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.example.task61.fragment.ProfileFragment;
+import com.example.task61.fragment.RecommendationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,30 +18,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-
-            int id = item.getItemId();
-            if (id == R.id.menu_home) {
-                selectedFragment = new HomeFragment();
-            } else if (id == R.id.menu_quiz) {
-                selectedFragment = new QuizFragment();
-            } else if (id == R.id.menu_profile) {
-                selectedFragment = new ProfileFragment();
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment selected = null;
+            if (item.getItemId() == R.id.menu_home) {
+                selected = new RecommendationFragment();
+            } else if (item.getItemId() == R.id.menu_profile) {
+                selected = new ProfileFragment();
             }
-
-            if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, selectedFragment)
-                        .commit();
-                return true;
-            }
-
-            return false;
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selected).commit();
+            return true;
         });
 
-        // Set default selected item
         bottomNavigationView.setSelectedItemId(R.id.menu_home);
     }
 }

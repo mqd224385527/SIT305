@@ -1,0 +1,11 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:padding="16dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView android:text="Choose your interests:" android:textSize="18sp" android:layout_marginBottom="10dp"/>
+    <CheckBox android:id="@+id/chkAI" android:text="Artificial Intelligence"/>
+    <CheckBox android:id="@+id/chkMath" android:text="Mathematics"/>
+    <CheckBox android:id="@+id/chkScience" android:text="Science"/>
+    <CheckBox android:id="@+id/chkHistory" android:text="History"/>
+    <Button android:id="@+id/btnSubmitInterest" android:text="Submit" android:layout_marginTop="20dp"/>
+</LinearLayout>
