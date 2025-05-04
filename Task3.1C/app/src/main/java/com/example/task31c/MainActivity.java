@@ -18,10 +18,16 @@ public class MainActivity extends AppCompatActivity {
         nameEditText = findViewById(R.id.nameEditText);
         startButton = findViewById(R.id.startButton);
 
+        // Check if there's a user name passed from ResultActivity
+        String userName = getIntent().getStringExtra("USER_NAME");
+        if (userName != null && !userName.isEmpty()) {
+            nameEditText.setText(userName);
+        }
+
         startButton.setOnClickListener(v -> {
-            String userName = nameEditText.getText().toString();
+            String userNameText = nameEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, QuizActivity.class);
-            intent.putExtra("USER_NAME", userName);
+            intent.putExtra("USER_NAME", userNameText);
             startActivity(intent);
         });
     }
